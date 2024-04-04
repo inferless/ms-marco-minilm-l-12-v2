@@ -1,8 +1,14 @@
 INPUT_SCHEMA = {
-    "data_pairs": {
-        'datatype': 'LIST',
+    "query": {
+        'datatype': 'STRING',
         'required': True,
-        'shape': [None, 2],
-        'example': [('Query', 'Paragraph1'), ('Query', 'Paragraph2'), ('Query', 'Paragraph3')]
+        'shape': [1],
+        'example': ["Query"]
+    },
+    "paragraphs": {
+        'datatype': 'STRING',
+        'required': True,
+        'shape': [None],  # Allow multiple paragraphs
+        'example': ["Paragraph1", "Paragraph2", "Paragraph3"]  # Example list of paragraphs
     }
 }
