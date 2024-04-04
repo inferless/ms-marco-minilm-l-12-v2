@@ -5,7 +5,11 @@ class InferlessPythonModel:
         self.model = CrossEncoder('model_name', max_length=512)
 
     def infer(self, inputs):
-        data_pairs = inputs["data_pairs"]
+        query = inputs["query"]
+        paragraphs = inputs["paragraphs"]
+        data_pairs = []
+        for paragraph in paragraphs:
+            data_pairs.append((query,paragraph))
         scores = self.model.predict(data_pairs)
         return {"result": scores}
     def finalize(self, args):
