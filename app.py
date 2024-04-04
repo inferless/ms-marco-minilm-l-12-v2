@@ -2,7 +2,7 @@ from sentence_transformers import CrossEncoder
 
 class InferlessPythonModel:
     def initialize(self):
-        self.model = CrossEncoder('model_name', max_length=512)
+        self.model = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-12-v2', max_length=512)
 
     def infer(self, inputs):
         query = inputs["query"]
