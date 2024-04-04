@@ -1,14 +1,12 @@
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import CrossEncoder
 
 class InferlessPythonModel:
     def initialize(self):
-        self.model = SentenceTransformer("jinaai/jina-embeddings-v2-base-en",trust_remote_code=True)
-        # control your input sequence length up to 8192
-        self.model.max_seq_length = 1024
+        self.model = CrossEncoder('model_name', max_length=512)
 
     def infer(self, inputs):
-        sentences = inputs["sentences"]
-        embeddings = self.model.encode(sentences)
-        return {"result": embeddings}
+        data_pairs = inputs["data_pairs"]
+        scores = self.model.predict(data_pairs)
+        return {"result": scores}
     def finalize(self, args):
         self.pipe = None
