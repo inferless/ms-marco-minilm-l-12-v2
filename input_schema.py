@@ -1,8 +1,8 @@
 INPUT_SCHEMA = {
-    "sentences": {
-        'datatype': 'STRING',
+    "data_pairs": {
+        'datatype': 'LIST',
         'required': True,
-        'shape': [1],
-        'example': ["What is Deep Learning?"]
+        'shape': [None, 2],
+        'example': [('Query', 'Paragraph1'), ('Query', 'Paragraph2'), ('Query', 'Paragraph3')]
     }
 }
