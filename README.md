@@ -1,5 +1,5 @@
-# Jina-embeddings-v2-base-en
-This is a Jina-embeddings-v2-base-en model template you can use to import your model on Inferless Platform. It's a  english monolingual embedding model with 8192 sequence length. Built on BERT architecture (JinaBERT) supporting symmetric bidirectional variant of ALiBi for extended sequence length. Pretrained on C4 dataset, further trained on Jina AI's collection of 400M+ sentence pairs & hard negatives from diverse domains, meticulously curated.
+# MS-Marco-MiniLM-L-12-v2
+This model was trained on the MS Marco Passage Ranking task. The model can be used for Information Retrieval: Given a query, encode the query will all possible passages (e.g. retrieved with ElasticSearch). Then sort the passages in a decreasing order. See SBERT.net Retrieve & Re-rank for more details. The training code is available here: SBERT.net Training MS Marco
 
 ---
 ## Prerequisites
